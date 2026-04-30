@@ -1,0 +1,40 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yhendamisemang.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label x:Name="ScoreLabel" Text="Punktid: 0" FontSize="20" HorizontalOptions="Center" />
+            
+            <!-- Stepper -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Paaride arv:" VerticalOptions="Center" />
+                <Stepper x:Name="AmountStepper" 
+                         Minimum="2" 
+                         Maximum="8" 
+                         Value="6"
+                         Increment="1" 
+                         ValueChanged="OnCardAmountChanged" />
+                <Label Text="{Source={x:Reference AmountStepper}, Path=Value}" 
+                       VerticalOptions="Center" 
+                       FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+
+            <Picker x:Name="ThemePicker" Title="Vali teema" SelectedIndexChanged="OnThemeChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Hele</x:String>
+                        <x:String>Tume</x:String>
+                        <x:String>Värviline</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <FlexLayout x:Name="GameGrid" Wrap="Wrap" JustifyContent="Center" AlignContent="Center" />
+
+            <Button Text="Uus mäng" Clicked="StartNewGame" BackgroundColor="DodgerBlue" TextColor="White" />
+            <Button Text="Resetti paaride arv" Clicked="OnCardAmountReset" BackgroundColor="DodgerBlue" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
