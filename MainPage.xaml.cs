@@ -15,7 +15,9 @@ public partial class MainPage : ContentPage
         {
             new Theme("Hele", Colors.White, Colors.Black),
             new Theme("Tume", Colors.Black, Colors.White),
-            new Theme("Värviline", Colors.LightPink, Colors.Purple)
+            new Theme("Värviline", Colors.LightPink, Colors.Purple),
+            new Theme("Roheline", Colors.DarkSeaGreen, Colors.Green)
+
         };
 
         _game = new Game(new Player("Mängija 1"));

@@ -27,6 +27,7 @@
                         <x:String>Hele</x:String>
                         <x:String>Tume</x:String>
                         <x:String>Värviline</x:String>
+                        <x:String>Roheline</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
